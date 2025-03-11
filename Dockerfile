@@ -28,11 +28,11 @@ FROM openjdk:17-ea-slim-buster
 WORKDIR /app
 
 # 빌드된 JAR 파일 복사 (디렉토리로 복사)
-COPY --from=build /app/build/libs/*.jar /app.jar
+COPY --from=build /app/build/libs/*.jar /
 
 # 컨테이너가 8080 포트를 사용할 것임을 지정
 EXPOSE 8080
 
 
 # 애플리케이션 실행
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "myapp-0.0.1-SNAPSHOT.jar"]
