@@ -19,7 +19,7 @@ RUN ./gradlew dependencies --no-daemon
 COPY src ./src
 
 # JAR 파일 빌드 (빌드 후 JAR 위치는 build/libs에 저장됨)
-RUN ./gradlew build -x test --no-daemon
+RUN ./gradlew clean build -x test --no-daemon
 
 # Step 2: Run stage (실행 환경 설정)
 FROM openjdk:17-ea-slim-buster
