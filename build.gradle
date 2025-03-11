@@ -28,3 +28,6 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+bootJar {
+    mainClass = 'com.example.myapp.MyappApplication'  // 애플리케이션의 main class 지정
+}
