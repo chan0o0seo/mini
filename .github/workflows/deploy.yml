@@ -1,0 +1,25 @@
+name: Deploy to EC2 with Docker
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 push될 때 실행
+
+jobs:
+  deploy:
+    runs-on: self-hosted  # 우리가 등록한 EC2 Runner에서 실행
+
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v3
+
+      - name: Docker 이미지 빌드
+        run: docker build -t my-app .
+
+      - name: 기존 컨테이너 중지 및 삭제
+        run: |
+          docker stop my-app-container || true
+          docker rm my-app-container || true
+
+      - name: 새 컨테이너 실행
+        run: docker run -d --name my-app-container -p 8080:8080 my-app
