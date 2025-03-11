@@ -25,10 +25,10 @@ RUN ./gradlew build -x test --no-daemon
 FROM openjdk:17-ea-slim-buster
 
 # 애플리케이션 작업 디렉토리 설정
-WORKDIR /app
+WORKDIR /_work
 
 # 빌드된 JAR 파일 복사 (디렉토리로 복사)
-COPY --from=build /app/build/libs/*.jar /app/
+COPY --from=build /app/build/libs/*.jar /_work/
 
 # 컨테이너가 8080 포트를 사용할 것임을 지정
 EXPOSE 8080
