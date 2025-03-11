@@ -1,5 +1,5 @@
 # Step 1: Build stage (애플리케이션을 빌드할 때 사용할 이미지)
-FROM maven:3.8.4-openjdk-11 as build
+FROM gradle:7.4-jdk17 as build
 
 # 작업 디렉토리 설정
 WORKDIR /app
