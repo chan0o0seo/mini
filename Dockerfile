@@ -4,9 +4,13 @@ FROM maven:3.8.4-openjdk-11 as build
 # 작업 디렉토리 설정
 WORKDIR /app
 
-# pom.xml 파일을 먼저 복사하여 의존성 다운로드
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
+# Gradle Wrapper 및 설정 파일 복사
+COPY gradlew gradlew
+COPY gradle gradle
+COPY build.gradle settings.gradle ./
+
+# Gradle 의존성 다운로드
+RUN ./gradlew build --no-daemon
 
 # 소스 코드를 복사하고 빌드
 COPY src ./src
