@@ -8,7 +8,7 @@ WORKDIR /app
 COPY gradlew gradlew
 COPY gradle gradle
 COPY build.gradle settings.gradle ./
-
+RUN chmod +x gradlew
 # Gradle 의존성 다운로드
 RUN ./gradlew build --no-daemon
 
