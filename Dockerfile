@@ -13,7 +13,7 @@ COPY build.gradle settings.gradle ./
 RUN chmod +x gradlew
 
 # 의존성 다운로드 및 빌드 (테스트 제외)
-RUN ./gradlew build -x test --no-daemon
+RUN ./gradlew dependencies --no-daemon
 
 # 소스 코드 복사
 COPY src ./src
