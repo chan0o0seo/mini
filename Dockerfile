@@ -26,7 +26,7 @@ FROM openjdk:17-ea-slim-buster
 WORKDIR /app
 
 # 빌드된 JAR 파일 복사 (경로 정확하게 수정)
-COPY --from=build /app/build/libs/*.jar /app/app.jar
+COPY --from=build /app/build/libs/*.jar /app/
 
 # 포트 설정
 EXPOSE 8080
