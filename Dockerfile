@@ -23,7 +23,7 @@ RUN ./gradlew clean build -x test --no-daemon
 # Step 2: Run stage (실행 환경)
 FROM openjdk:17-ea-slim-buster
 
-WORKDIR /app
+WORKDIR /_work
 
 # 빌드된 JAR 파일 복사 (경로 정확하게 수정)
 COPY --from=build /app/build/libs/*.jar /app/
