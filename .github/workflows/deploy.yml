@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'adoptium'
+          distribution: 'temurin'
 
       - name: Gradle 빌드
         run: ./gradlew bootJar  # Gradle 빌드를 실행합니다. 필요에 따라 다른 명령어로 변경 가능
