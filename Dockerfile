@@ -18,7 +18,7 @@ RUN ./gradlew dependencies --no-daemon
 COPY src src
 
 # JAR 파일 빌드 (테스트 제외)
-RUN ./gradlew clean build -x test --no-daemon
+RUN ./gradlew bootjar
 
 # Step 2: Run stage (실행 환경)
 FROM openjdk:17-slim
