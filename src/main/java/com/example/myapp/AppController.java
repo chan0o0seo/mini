@@ -32,9 +32,6 @@ public class AppController {
     public String fuck() {
         return "fuck";
     }
-    @GetMapping("/fuck2")
-    public ResponseEntity<String> fuc2k() {
-        return ResponseEntity.ok("ok");
-    }
+
 
 }
