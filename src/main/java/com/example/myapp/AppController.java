@@ -1,6 +1,7 @@
 package com.example.myapp;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,10 @@ public class AppController {
     @GetMapping("/fuck")
     public String fuck() {
         return "fuck";
+    }
+    @GetMapping("/fuck2")
+    public ResponseEntity<String> fuc2k() {
+        return ResponseEntity.ok("ok");
     }
 
 }
