@@ -1,4 +1,4 @@
-FROM openjdk:17-ea-slim-buster as build
+FROM openjdk:17-ea-slim-buster As build
 
 WORKDIR /app
 
