@@ -23,7 +23,9 @@ jobs:
         run: chmod +x ./gradlew  # Ensure gradlew is executable
 
       - name: Gradle 빌드
-        run: ./gradlew bootJar # Gradle 빌드를 실행합니다.
+        run: |
+          ./gradlew bootJar --no-daemon --parallel --build-cache --configure-on-demand
+
 
       - name: Docker 이미지 빌드
         run: |
