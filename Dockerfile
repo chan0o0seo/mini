@@ -33,4 +33,4 @@ COPY --from=build /app/build/libs/*.jar /app/
 EXPOSE 8080
 
 # JAR 실행
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/myapp-0.0.1-SNAPSHOT.jar"]
