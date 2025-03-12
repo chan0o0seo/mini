@@ -34,9 +34,6 @@ jobs:
           docker push my-docker-repo/my-app:latest
         # 여기에 Docker 레지스트리 푸시가 필요하다면 사용합니다.
 
-      - name: 환경변수설정
-        env:
-          PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}  # 비공개 키를 GitHub Secrets에 저장하고 사용
       - name: EC2에 SSH 접속하여 배포
         run: |
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > /tmp/private-key.pem
