@@ -21,7 +21,6 @@ jobs:
       - name: Gradle 권한설정
         run: chmod +x gradlew
 	
-	    # 3. gradle 실행
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2.4.2 # 버전 선택
         with:
