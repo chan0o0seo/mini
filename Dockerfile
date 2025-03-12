@@ -17,7 +17,6 @@ RUN ./gradlew dependencies
 COPY src src
 RUN ./gradlew bootJar
 
-
 # Step 2: Run stage (실행 환경)
 FROM openjdk:17-ea-slim-buster
 
