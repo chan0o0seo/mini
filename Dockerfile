@@ -11,7 +11,7 @@ COPY build.gradle settings.gradle ./
 RUN chmod +x gradlew
 
 # Gradle 캐시를 활용하여 종속성 다운로드
-RUN ./gradlew dependencies --no-daemon || true
+RUN ./gradlew dependencies
 
 # 소스 코드 복사 후 빌드
 COPY src src
