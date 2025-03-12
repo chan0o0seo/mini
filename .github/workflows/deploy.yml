@@ -19,16 +19,8 @@ jobs:
           java-version: '17'
           distribution: 'adoptopenjdk'
 
-      - name: Cache Gradle dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/settings.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
-      - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+      - name: Gradle 빌드
+        run: ./gradlew bootJar  # Gradle 빌드를 실행합니다. 필요에 따라 다른 명령어로 변경 가능
 
       - name: Docker 이미지 빌드
         run: docker build -t my-app .
