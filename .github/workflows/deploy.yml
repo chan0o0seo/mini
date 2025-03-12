@@ -26,7 +26,6 @@ jobs:
         run: |
           ./gradlew bootJar --no-daemon --parallel --build-cache --configure-on-demand
 
-
       - name: Docker 이미지 빌드
         run: |
             # Docker 빌드 컨텍스트 확인
