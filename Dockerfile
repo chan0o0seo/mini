@@ -1,8 +1,7 @@
-FROM openjdk:17-ea-slim-buster As build
+FROM openjdk:17-ea-slim-buster
 
 WORKDIR /app
 
-# 빌드된 JAR 파일 복사 (경로 정확하게 확인)
 COPY ./build/libs/*.jar /app/
 
 # 포트 설정

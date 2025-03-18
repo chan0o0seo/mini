@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class AppController {
     @GetMapping("/test1")
@@ -32,6 +32,4 @@ public class AppController {
     public String fuck() {
         return "fuck";
     }
-
-
 }
