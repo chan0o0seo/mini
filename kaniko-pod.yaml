@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko-$BUILD_NUMBER
+  namespace: chanyoung
+spec:
+  serviceAccountName: kaniko-sa
+  containers:
+    - name: kaniko
+      image: gcr.io/kaniko-project/executor:latest
+      args:
+        - "--dockerfile=/workspace/Dockerfile"
+        - "--context=dir:///workspace"
+        - "--destination=cksdudtj/back:$BUILD_NUMBER"
+      volumeMounts:
+        - name: docker-config
+          mountPath: /kaniko/.docker
+        - name: workspace
+          mountPath: /workspace
+  volumes:
+    - name: docker-config
+      secret:
+        secretName: regcred
+    - name: workspace
+      persistentVolumeClaim:
+        claimName: jenkins-workspace
